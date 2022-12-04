@@ -21,29 +21,29 @@ print(sum)
 
 # Second challenge
 sum = 0
-line1 = ''
-line2 = ''
-line3 = ''
+line1 = ""
+line2 = ""
+line3 = ""
 
 for line in lines:
-  # Get lines
-  if line1 == '': 
-    line1 = line.replace('\n', '')
-  elif line2 == "": 
-    line2 = line.replace('\n', '')
-  elif line3 == "":
-    line3 = line.replace('\n', '')
+    # Get lines
+    if line1 == "":
+        line1 = line.replace("\n", "")
+    elif line2 == "":
+        line2 = line.replace("\n", "")
+    elif line3 == "":
+        line3 = line.replace("\n", "")
 
-    # Uniques letters 
-    uniques = set(line1 + line2 + line3)
+        # Uniques letters
+        uniques = set(line1 + line2 + line3)
 
-    for unique in uniques:
-      if unique in line1 and unique in line2 and unique in line3:
-        code = ord(unique.upper()) - 64
-        sum += code + 26 if unique != unique.lower() else code
-        break
+        for unique in uniques:
+            if unique in line1 and unique in line2 and unique in line3:
+                code = ord(unique.upper()) - 64
+                sum += code + 26 if unique != unique.lower() else code
+                break
 
-    # Clean 
-    line1 = line2 = line3 = ""
+        # Clean
+        line1 = line2 = line3 = ""
 
 print(sum)
